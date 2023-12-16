@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\LocationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', [LocationsController::class, 'checkConnection']);
+Route::get('/home/{locId}', [LocationsController::class, 'NearestFive']);
